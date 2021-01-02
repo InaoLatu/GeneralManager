@@ -44,6 +44,7 @@ def get_unit_microcontent(request, **kwargs):
         print("unit NOT found")
         print(kwargs['unit'])
         request_string = constants.AUTHORING_TOOL_IP + "units"
+        #request_string = constants.GENERAL_MANAGER_IP + "get_units/"
         units_json = requests.get(request_string).json()
         for unit in units_json:
             if kwargs['unit'] == unit['name']:
